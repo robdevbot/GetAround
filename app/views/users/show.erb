@@ -1,0 +1,12 @@
+username: <%= @user.username %><br>
+email: <%= @user.email %><br>
+member since <%= @user.created_at.asctime %>
+
+<% if @user.subscriptions %>
+  <p>My subscriptions:</p>
+  <ul>
+    <% @user.subscriptions.each do |sub| %>
+      <li><%= sub.line.name %>; priority <%= sub.priority %></li>
+    <% end %>
+  </ul>
+<% end %>

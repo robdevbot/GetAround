@@ -19,6 +19,26 @@
 </head>
 <body>
 <div id="content">
+  <h1><a href="/">Heading!</a></h1>
+  <nav>
+
+    <% if session[:user_id] %>
+      <a href="/users/<%= session[:user_id] %>">my profile</a>
+      <form action="/users/logout" method="post">
+        <input type="submit" value="log out">
+      </form>
+    <% else %>
+      <a href="/users/new">register</a>
+      <a href="/users/login">log in</a>
+    <% end %>
+
+  </nav>
+
+
+
+
+
+
   <%= yield %>
 </div>
 </body>

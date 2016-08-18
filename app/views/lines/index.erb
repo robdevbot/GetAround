@@ -1,0 +1,19 @@
+<% @lines.each do |line| %>
+  <% if line.bus? %>
+    Bus:
+  <% else %>
+    Train:
+  <% end %>
+  <%= line.name %><br>
+
+
+  <% if session[:user_id] %>
+
+    <form action='/subscriptions' method="post">
+      <input type="hidden" name="line_id" value=<%= line.id %>>
+      <input type="submit" value="Subscribe">
+    </form>
+
+  <% end %>
+
+<% end %>
