@@ -8,12 +8,20 @@
 
 
   <% if session[:user_id] %>
+    <% subtothis = line.subscriptions.find_by(user_id: session[:user_id]) %>
+    <% if subtothis %>
+    <!--if the user is subscribed-->
+      <form action='/subscriptions/<%= subtothis.id %>' method="post">
+      <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="line_id" value=<%= line.id %>>
+        <input type="submit" value="Unsubscribe">
+      </form>
+    <% else %>
+      <form action='/subscriptions' method="post">
+        <input type="hidden" name="line_id" value=<%= line.id %>>
+        <input type="submit" value="Subscribe">
+      </form>
 
-    <form action='/subscriptions' method="post">
-      <input type="hidden" name="line_id" value=<%= line.id %>>
-      <input type="submit" value="Subscribe">
-    </form>
-
+    <% end %>
   <% end %>
-
-<% end %>
+<% end %><!-- end of lines loop -->

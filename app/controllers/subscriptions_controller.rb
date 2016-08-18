@@ -8,3 +8,18 @@ post '/subscriptions' do
 
   redirect "/users/#{user.id}"
 end
+
+
+# put '/subscriptions/:id' do
+#   editsub = Subscription.find(params[:id])
+#   editsub.update_attributes()
+#   redirect "/users/#{user.id}"
+# end
+
+
+delete '/subscriptions/:id' do
+  user = User.find(session[:user_id])
+  destroysub = Subscription.find(params[:id])
+  destroysub.destroy
+  redirect "/users/#{user.id}"
+end
