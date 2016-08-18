@@ -1,0 +1,15 @@
+<!-- Event.create(
+      name: "Renegade Craft Fair",
+      description: "bi-annual Arts festival. Centered around Division and Damen",
+      start_time: Time.new(2016, 9, 10, 11, 0, 0),
+      end_time: Time.new(2016, 9, 11, 22, 0, 0),
+      over: false
+      ) -->
+<%= erb :_errordisplay, locals: {errors: @errors} %>
+
+<form action='/events' method="post">
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="description" placeholder="Description">
+  <input type="text" name="start_time" placeholder="start_time">
+  <input type="text" name="end_time" placeholder="end_time">
+</form>

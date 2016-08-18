@@ -1,3 +1,3 @@
 get '/' do
-  redirect '/lines'
+  redirect '/stops'
 end

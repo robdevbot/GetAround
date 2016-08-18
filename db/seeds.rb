@@ -1,6 +1,4 @@
-# require 'faker'
-
-
+require 'faker'
 # Line.create(name: "1 Bronzeville/Union Station", mode: "bus")
 # Line.create(name: "2 Hyde Park Express", mode: "bus")
 # Line.create(name: "3 King Drive", mode: "bus")
@@ -133,44 +131,123 @@
 # Line.create(name: "Brown line", mode: "El")
 # Line.create(name: "Purple line", mode: "El")
 # Line.create(name: "Red line", mode: "El")
-# Line.create(name: "Blue line", mode: "El")
+blueline = Line.create(name: "Blue line", mode: "El")
 # Line.create(name: "Orange line", mode: "El")
 # Line.create(name: "Pink line", mode: "El")
 # Line.create(name: "Green line", mode: "El")
 # Line.create(name: "Yellow line", mode: "El")
 
 
-# 10.times do
-#     User.create(
-#       username: Faker::Internet.user_name,
-#       email: Faker::Internet.email,
-#       password: 'password',
-#       permissions: "user"
-#       )
-# end
+Stop.create(line_id: blueline.id, name: "O'Hare", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Rosemont", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Cumberland", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Harlem(North Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Jefferson Park", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Montrose(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Irving Park(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Addison(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Belmont(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Logan Square", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "California(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Western(North Blue)", mode: blueline.mode)
+damenblue = Stop.create(line_id: blueline.id, name: "Damen(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Division", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Chicago", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Grand", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Clark/Lake", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Washington", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Monroe(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Jackson(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "LaSalle(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Clinton(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "UIC-Halsted", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Racine", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Illinois Medical District", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Western(South Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Kedzie-Homan", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Pulaski(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Cicero(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Austin(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Oak Park(Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Harlem(South Blue)", mode: blueline.mode)
+Stop.create(line_id: blueline.id, name: "Forest Park", mode: blueline.mode)
 
-#     User.create(
-#       username: "rob",
-#       email: "robzd1@gmail.com",
-#       password: 'password',
-#       permissions: "admin"
-#       )
-
-# 100.times do
-#     Subscription.create(
-#       user_id: rand(1..10),
-#       stop_id: rand(1..137),
-#       priority: rand(1..3)
-#       )
-# end
 
 
-    # Event.create(
-    #   name: "Bears game"
-    #   description: ""
-    #   )
+10.times do
+    User.create(
+      username: Faker::Internet.user_name,
+      email: Faker::Internet.email,
+      password: 'password',
+      permissions: "user"
+      )
+end
 
+    User.create(
+      username: "rob",
+      email: "robzd1@gmail.com",
+      password: 'password',
+      permissions: "admin"
+      )
 
+    Subscription.create(
+      user_id: rand(1..10),
+      stop_id: rand(1..32),
+      priority: rand(1..3)
+      )
+
+    renegade = Event.create(
+      name: "Renegade Craft Fair",
+      description: "bi-annual Arts festival. Centered around Division and Damen",
+      start_time: Time.new(2016, 9, 10, 11, 0, 0),
+      end_time: Time.new(2016, 9, 11, 22, 0, 0),
+      over: false
+      )
+
+    Effect.create(
+      stop_id: damenblue.id,
+      event_id: renegade.id,
+      severity: 6
+      )
+
+# 18: Clark After Dark | River North
+# 18-21: Festa Italiana | Little Italy
+# 19-21: Edison Park Fest | Edison Park
+# 20: Chicago West Side Music Festival | Douglas Park
+# 20-21: Chicago Air and Water Show | Lakeshore
+# 20-21: Albany Park World Fest | Albany Park
+# 20-21: Glenwood Avenue Arts Fest | Edgewater
+# 21: Community Lowrider Festival | Chinatown
+# 27-28: Motor Row Craft Beer & Wine Fest | South Loop
+# 27-28: Taste of Greektown | Greektown
+# 31-Sept. 11: Chicago Fringe Festival | Jefferson Park
+
+# September
+# 1-4: Chicago Jazz Festival | Downtown
+# 2-3: Great American Lobster Fest | Navy Pier
+# 2-5: Taste of Polonia | Jefferson Park
+# 2-5: African Festival Of the Arts | Washington Park
+# 3-4: Ciders and Sliders | Albany Park
+# 9-10: Shock Top Oyster Fest | Roscoe Village
+# 9-10: Windy City Wine Festival | The Loop
+# 9-11: Festival de La Villita | Little Village
+# 9-11: Lakeview East Festival of the Arts | Lakeview
+# 9-11: German American Fest | Lincoln Square
+# 10: River North Whiskey Fest | River North
+# 10-11: Ravenswood ArtWalk | Ravenswood
+# 10-11: Renegade Craft Fair | Wicker Park
+# 10-11: Ukrainian Village Fest | Ukrainian Village
+# 16-18: Riot Fest | Douglas Park
+# 17: River North Wine Fest | River North
+# 17-18: City Made Festival | Andersonville
+# 17-18: West Loop Arts Fest | West Loop
+# 17-18: Lakeview Taco Fest | Lakeview
+# 23-25: Oktoberfest Chicago | Lakeview
+# 23-25: Chicago Gourmet | The Loop
+# 24-25: Edgewater Arts Festival | Edgewater
+# 24-25: Hyde Park Jazz Fest | Hyde Park
+# 24-25: Hyde Park Arts and Crafts Adventure | Hyde Park
+# 30-Oct. 1: West Town Art Walk | West Town
 
 
 

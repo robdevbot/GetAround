@@ -1,0 +1,21 @@
+<h2>Event</h2>
+<%= @event.name %><br>
+<%= @event.description %><br>
+<%= @event.start_time.asctime %> - <%= @event.end_time.asctime %><br>
+
+<% if @event.effects %>
+  Affecting the following stops:
+  <ul id="effects-list">
+    <% @event.effects.each do |effect| %>
+      <li><%= effect.stop.name %>, severity <%= effect.severity %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div id="add-effect-form-container">
+</div>
+
+<form id="show-add-effect-form" action='/effects/new' method="get"> <!-- bring up form to add an effect -->
+  <input type="hidden" name="event_id" value=<%= @event.id %>>
+  <input type="submit" value="Add an effect">
+</form>

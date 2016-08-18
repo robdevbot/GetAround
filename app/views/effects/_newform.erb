@@ -1,0 +1,55 @@
+<!-- locals: event_id -->
+
+Add an effect:
+
+<form id="add-effect" action='/effects' method="post">
+  <input type="hidden" name="event_id" value="<%= event_id %>">
+  <select name="stop_id">
+    <option value='1'>O'Hare</option>
+    <option value='2'>Rosemont</option>
+    <option value='3'>Cumberland</option>
+    <option value='4'>Harlem(North Blue)</option>
+    <option value='5'>Jefferson Park</option>
+    <option value='6'>Montrose(Blue)</option>
+    <option value='7'>Irving Park(Blue)</option>
+    <option value='8'>Addison(Blue)</option>
+    <option value='9'>Belmont(Blue)</option>
+    <option value='10'>Logan Square</option>
+    <option value='11'>California(Blue)</option>
+    <option value='12'>Western(North Blue)</option>
+    <option value='13'>Damen(Blue)</option>
+    <option value='14'>Division</option>
+    <option value='15'>Chicago</option>
+    <option value='16'>Grand</option>
+    <option value='17'>Clark/Lake</option>
+    <option value='18'>Washington</option>
+    <option value='19'>Monroe(Blue)</option>
+    <option value='20'>Jackson(Blue)</option>
+    <option value='21'>LaSalle(Blue)</option>
+    <option value='22'>Clinton(Blue)</option>
+    <option value='23'>UIC-Halsted</option>
+    <option value='24'>Racine</option>
+    <option value='25'>Illinois Medical District</option>
+    <option value='26'>Western(South Blue)</option>
+    <option value='27'>Kedzie-Homan</option>
+    <option value='28'>Pulaski(Blue)</option>
+    <option value='29'>Cicero(Blue)</option>
+    <option value='30'>Austin(Blue)</option>
+    <option value='31'>Oak Park(Blue)</option>
+    <option value='32'>Harlem(South Blue)</option>
+    <option value='33'>Forest Park</option>
+  </select>
+  <select name="severity">
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+    <option value='7'>7</option>
+    <option value='8'>8</option>
+    <option value='9'>9</option>
+    <option value='10'>10</option>
+  </select>
+  <input type="submit" value="add it!">
+</form>
