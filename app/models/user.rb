@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   has_many :subscriptions
-  has_many :lines, through: :subscriptions
-
+  has_many :stops, through: :subscriptions
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
