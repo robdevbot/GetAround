@@ -204,7 +204,7 @@ end
       over: false
       )
 
-    airwater = Suggestion.create(name: "Chicago Air and Water Show",description: "annual military demonstration near North Ave. beach",start_time: Time.new(2016, 8, 20, 10, 0, 0),end_time: Time.new(2016, 8, 21, 22, 0, 0),over: false)
+    airwater = Suggestion.create(name: "Chicago Air and Water Show",description: "annual military demonstration near North Ave. beach",start_time: Time.new(2016, 8, 20, 10, 0, 0),end_time: Time.new(2016, 8, 21, 22, 0, 0))
 
     Effect.create(
       stop_id: damenblue.id,
