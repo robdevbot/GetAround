@@ -1,27 +1,3 @@
 username: <%= @user.username %><br>
 email: <%= @user.email %><br>
 member since <%= @user.created_at.asctime %>
-
-<% if @user.subscriptions %>
-  <p>My subscriptions:</p>
-  <ul>
-    <% @user.subscriptions.each do |sub| %>
-      <li>
-        <%= sub.stop.name %>; priority:<%= sub.priority %>
-        <% if sub.effects %>
-          <% sub.effects.each do |effect| %>
-            Warning! <a href="/events/<%= effect.event.id %>"><%= effect.event.name %></a>; severity: <%= effect.severity %>
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-
-<% if @user.permissions == "admin" %>
-  <h2>Admin tools</h2>
-  <ul>
-    <li>Create new events/effects</li>
-    <li>View/approve suggested events</li>
-  </ul>
-<% end %>

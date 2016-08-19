@@ -11,7 +11,7 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-
+  <link rel="stylesheet" href="/css/custom.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
@@ -19,7 +19,9 @@
 </head>
 <body>
 <div id="content">
-  <h1><a href="/">Heading!</a></h1>
+  <header>
+    <h1><a href="/">GetAround</a></h1>
+  </header>
   <nav>
 
     <% if session[:user_id] %>
@@ -31,15 +33,11 @@
       <a href="/users/new">register</a>
       <a href="/users/login">log in</a>
     <% end %>
-
   </nav>
 
-
-
-
-
-
-  <%= yield %>
+  <div id="yield-container">
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>

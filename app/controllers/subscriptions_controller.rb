@@ -6,7 +6,7 @@ post '/subscriptions' do
 
   newsub.save
 
-  redirect "/users/#{user.id}"
+  redirect "/users/#{user.id}/dashboard"
 end
 
 

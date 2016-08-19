@@ -1,0 +1,9 @@
+* {
+  background-color: #29293d;
+  color: #a6a6a6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {float:left;}
+nav {float:right;}
+#yield-container {clear:both;}

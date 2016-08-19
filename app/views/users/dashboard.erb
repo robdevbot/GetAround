@@ -1,0 +1,33 @@
+<div class='regulardiv'>
+  <% if @user.subscriptions.length > 0 %>
+    <p>My subscriptions:</p>
+    <ul>
+      <% @user.subscriptions.each do |sub| %>
+        <li>
+          <%= sub.stop.name %>; priority:<%= sub.priority %>
+          <% if sub.effects %>
+            <% sub.effects.each do |effect| %>
+              Warning! <a href="/events/<%= effect.event.id %>"><%= effect.event.name %></a>; severity: <%= effect.severity %>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <a href="/stops">Add subscriptions</a>
+</div>
+
+<div class='regulardiv'>
+  <a href="/suggestions/new">Suggest an event</a>
+</div>
+
+<div class='regulardiv'>
+  <% if @user.permissions == "admin" %>
+    <h2>Admin tools</h2>
+    <ul>
+      <li><a href="/events/new">Create new events/effects</a></li>
+      <li><a href="/suggestions">View/approve suggested events</a></li>
+    </ul>
+  <% end %>
+</div>

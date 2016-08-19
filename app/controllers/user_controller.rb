@@ -10,7 +10,8 @@ post  '/users' do #create a new user
   user = User.new(
       username: params[:username],
       email: params[:email],
-      password: params[:password]
+      password: params[:password],
+      permissions: "user"
       )
 
   if user.save
@@ -76,4 +77,10 @@ get '/users/:id' do #display a specific user
   @user = User.find(params[:id])
   erb :'/users/show'
 end
+
+get '/users/:id/dashboard' do #display a specific user
+  @user = User.find(params[:id])
+  erb :'/users/dashboard'
+end
+
 

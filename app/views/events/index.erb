@@ -1,1 +1,5 @@
-index.erb
+<% @events.each do |event| %>
+  <%= event.name %><br>
+  <%= event.description %><br>
+  <%= event.start_time %> - <%= event.end_time %><br>
+<% end %>

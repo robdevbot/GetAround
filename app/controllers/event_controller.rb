@@ -10,7 +10,7 @@ get '/events/new' do
 end
 
 
-post '/events/' do
+post '/events' do
   newevent = Event.new(
     name: params[:name],
     description: params[:description],
@@ -20,12 +20,17 @@ post '/events/' do
   )
 
   if newevent.save
+    if params[:suggestion_id]
+      sug_to_delete = Suggestion.find(params[:suggestion_id])
+      sug_to_delete.destroy
+    end
     redirect "/events/#{newevent.id}"
   else
     @errors = newevent.errors.full_messages
     erb :'/events/new'
   end
 end
+
 
 
 get '/events/:id' do

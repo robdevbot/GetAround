@@ -1,8 +1,9 @@
+
+<h2>Current stops available for subscription:</h2>
+
+
 <% @stops.each do |stop| %>
-
   <%= stop.name %><br>
-
-
   <% if session[:user_id] %>
     <% subtothis = stop.subscriptions.find_by(user_id: session[:user_id]) %>
     <% if subtothis %>

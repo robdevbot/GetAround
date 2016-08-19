@@ -1,0 +1,17 @@
+<% @suggestions.each do |suggestion| %>
+  <%= suggestion.name %><br>
+  <%= suggestion.description %><br>
+  <%= suggestion.start_time %> - <% if suggestion.end_time  %>
+                                    <%= suggestion.end_time %>
+                                  <% else %>?<% end %><br>
+
+<form action="/events" method="post">
+  <input type="hidden" name="name" value="<%= suggestion.name %>">
+  <input type="hidden" name="description" value="<%= suggestion.description %>">
+  <input type="hidden" name="start_time" value="<%= suggestion.start_time %>">
+  <input type="hidden" name="end_time" value="<%= suggestion.end_time %>">
+  <input type="hidden" name="suggestion_id" value="<%= suggestion.id %>">
+  <input type="submit" value="Approve">
+</form>
+
+<% end %>
