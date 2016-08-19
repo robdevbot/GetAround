@@ -5,10 +5,14 @@
       <% @user.subscriptions.each do |sub| %>
         <li>
           <%= sub.stop.name %>; priority:<%= sub.priority %>
-          <% if sub.effects %>
-            <% sub.effects.each do |effect| %>
-              Warning! <a href="/events/<%= effect.event.id %>"><%= effect.event.name %></a>; severity: <%= effect.severity %>
-            <% end %>
+          <% if sub.effects.length > 0 %>
+            <div class="warnings">
+              <% sub.effects.each do |effect| %>
+                Warning! <a href="/events/<%= effect.event.id %>"><%= effect.event.name %></a>;
+                severity: <%= effect.severity %><br>
+                <%= "#{effect.event.start_time} - #{effect.event.end_time}" %>
+              <% end %>
+            </div>
           <% end %>
         </li>
       <% end %>

@@ -22,6 +22,13 @@ post '/suggestions' do
 end
 
 
+delete '/suggestions/:id' do
+  suggestion_to_delete = Suggestion.find(params[:id])
+  suggestion_to_delete.destroy
+  redirect '/suggestions'
+end
+
+
 get '/suggestions/new' do
   erb :'/suggestions/new'
 end

@@ -7,3 +7,15 @@
 header {float:left;}
 nav {float:right;}
 #yield-container {clear:both;}
+
+.warnings {
+  background-color: #ff704d;
+  color: white;
+  width: auto;
+  padding: 5px;
+  border-radius: 8px;
+}
+.warnings a {
+  color: #b3e0ff;
+  text-decoration: underline;
+}
