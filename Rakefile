@@ -1,5 +1,9 @@
 require 'rake'
 
+APP_FILE  = 'app.rb'
+APP_CLASS = 'App'
+require 'sinatra/assetpack/rake'
+
 require ::File.expand_path('../config/environment', __FILE__)
 
 # Include all of ActiveSupport's core class extensions, e.g., String#camelize

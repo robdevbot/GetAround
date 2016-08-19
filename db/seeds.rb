@@ -190,6 +190,8 @@ end
       permissions: "admin"
       )
 
+    User.create( username: "bobby", email: "bozo@gmail.com", password: 'password', permissions: "user" )
+
     Subscription.create(
       user_id: rand(1..10),
       stop_id: rand(1..32),
@@ -211,8 +213,6 @@ end
       end_time: Time.new(2016, 7, 11, 22, 0, 0),
       over: false
       )
-
-
 
     airwater = Suggestion.create(name: "Chicago Air and Water Show",description: "annual military demonstration near North Ave. beach",start_time: Time.new(2016, 8, 20, 10, 0, 0),end_time: Time.new(2016, 8, 21, 22, 0, 0))
     jazz = Suggestion.create(name: "Chicago Jazz Festival",description: "large music and food festival in the loop",start_time: Time.new(2016, 9, 1, 10, 0, 0),end_time: Time.new(2016, 9, 5, 22, 0, 0))

@@ -1,8 +1,17 @@
-* {
+body {
   background-color: #29293d;
   color: #a6a6a6;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.regulardiv {
+  background-color: #52527a;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+
 
 header {float:left;}
 nav {float:right;}

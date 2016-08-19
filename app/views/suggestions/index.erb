@@ -1,22 +1,24 @@
-<% @suggestions.each do |suggestion| %>
-  <%= suggestion.name %><br>
-  <%= suggestion.description %><br>
-  <%= suggestion.start_time %> - <% if suggestion.end_time  %>
-                                    <%= suggestion.end_time %>
-                                  <% else %>?<% end %><br>
+<div class='regulardiv'>
+  <% @suggestions.each do |suggestion| %>
+    <%= suggestion.name %><br>
+    <%= suggestion.description %><br>
+    <%= suggestion.start_time %> - <% if suggestion.end_time  %>
+                                      <%= suggestion.end_time %>
+                                    <% else %>?<% end %><br>
 
-<form action="/events" method="post">
-  <input type="hidden" name="name" value="<%= suggestion.name %>">
-  <input type="hidden" name="description" value="<%= suggestion.description %>">
-  <input type="hidden" name="start_time" value="<%= suggestion.start_time %>">
-  <input type="hidden" name="end_time" value="<%= suggestion.end_time %>">
-  <input type="hidden" name="suggestion_id" value="<%= suggestion.id %>">
-  <input type="submit" value="Approve">
-</form>
+  <form action="/events" method="post">
+    <input type="hidden" name="name" value="<%= suggestion.name %>">
+    <input type="hidden" name="description" value="<%= suggestion.description %>">
+    <input type="hidden" name="start_time" value="<%= suggestion.start_time %>">
+    <input type="hidden" name="end_time" value="<%= suggestion.end_time %>">
+    <input type="hidden" name="suggestion_id" value="<%= suggestion.id %>">
+    <input type="submit" value="Approve">
+  </form>
 
-<form action="/suggestions/<%= suggestion.id %>" method="post">
-<input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete">
-</form>
+  <form action="/suggestions/<%= suggestion.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
 
-<% end %>
+  <% end %>
+</div>
